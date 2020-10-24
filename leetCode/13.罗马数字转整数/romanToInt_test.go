@@ -4,63 +4,63 @@ import(
 	"testing"
 )
 
-type question13 struct {
-	para13
-	ans13
+type test struct {
+	roman
+	res
 }
 
 // para 是参数
 // one 代表第一个参数
-type para13 struct {
-	one string
+type roman struct {
+	p string
 }
 
 // ans 是答案
 // one 代表第一个答案
-type ans13 struct {
-	one int
+type res struct {
+	correctRes int
 }
 
-func Test_Problem13(t *testing.T) {
+func Test_Case(t *testing.T) {
 
-	qs := []question13{
-
+	testCases := []test{
 		{
-			para13{"III"},
-			ans13{3},
+			roman{"III"},
+			res{3},
 		},
 
 		{
-			para13{"IV"},
-			ans13{4},
+			roman{"IV"},
+			res{4},
 		},
 
 		{
-			para13{"IX"},
-			ans13{9},
+			roman{"IX"},
+			res{9},
 		},
 
 		{
-			para13{"LVIII"},
-			ans13{58},
+			roman{"LVIII"},
+			res{58},
 		},
 
 		{
-			para13{"MCMXCIV"},
-			ans13{1994},
+			roman{"MCMXCIV"},
+			res{1994},
 		},
 
 		{
-			para13{"MCMXICIVI"},
-			ans13{2014},
+			roman{"MCMXICIVI"},
+			res{2014},
 		},
 	}
 
 	fmt.Printf("------------------------Leetcode Problem 13------------------------\n")
 
-	for _, q := range qs {
-		_, p := q.ans13, q.para13
-		fmt.Printf("【input】:%v    【output】:%v\n", p.one, romanToInt(p.one))
+	for _, para := range testCases{
+		correct_res, cur_roman := para.res.correctRes, para.roman.p
+		cur_res := romanToInt(cur_roman)
+		fmt.Printf("输入: %v    输出: %v  预期结果: %v\n", cur_roman, cur_res, correct_res)
 	}
 	fmt.Printf("\n\n\n")
 }
