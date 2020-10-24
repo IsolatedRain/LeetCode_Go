@@ -1,5 +1,6 @@
 package leetCode
-import(
+
+import (
 	"fmt"
 	"testing"
 )
@@ -51,9 +52,9 @@ func Test_Case(t *testing.T) {
 		},
 	}
 
-	fmt.Printf("------------------------Leetcode Problem 13------------------------\n")
+	fmt.Printf("------------------------罗马数字 转 整数------------------------\n")
 
-	for _, para := range testCases{
+	for _, para := range testCases {
 		correct_res, cur_roman := para.res.correctRes, para.roman.p
 		cur_res := romanToInt(cur_roman)
 		fmt.Printf("输入: %v    输出: %v  预期结果: %v\n", cur_roman, cur_res, correct_res)
