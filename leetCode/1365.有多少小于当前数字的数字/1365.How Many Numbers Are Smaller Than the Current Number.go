@@ -1,20 +1,20 @@
 package leetcode
 
 func smallerNumbersThanCurrent(nums []int) []int {
-	max_num := max(nums)
-	count := make([]int, max_num+1)
+	maxNum := max(nums)
+	count := make([]int, maxNum+1)
 	for _, v := range nums {
 		count[v]++
 	}
-	pre_sum := make([]int, max_num+1)
-	pre_sum[0] = count[0]
-	for i := 0; i < max_num; i++ {
-		pre_sum[i+1] = count[i+1] + pre_sum[i]
+	preSum := make([]int, maxNum+1)
+	preSum[0] = count[0]
+	for i := 0; i < maxNum; i++ {
+		preSum[i+1] = count[i+1] + preSum[i]
 	}
 	res := make([]int, len(nums))
 	for i, v := range nums {
 		if v > 0 {
-			res[i] = pre_sum[v-1]
+			res[i] = preSum[v-1]
 		}
 	}
 

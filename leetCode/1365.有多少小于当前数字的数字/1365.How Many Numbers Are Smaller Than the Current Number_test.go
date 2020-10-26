@@ -27,13 +27,13 @@ func Test_cases(t *testing.T) {
 	}
 	fmt.Println("------------------------有多少小于当前数字的数字---------------------------")
 	for _, p := range testCases {
-		cur_para := p.nums
-		correct_res := p.res
-		cur_res := smallerNumbersThanCurrent(cur_para)
-		fmt.Printf("输入:%v,    输出:%v,     预期结果:%v    \n", cur_para, cur_res, correct_res)
+		curPara := p.nums
+		correctRes := p.res
+		curRes := smallerNumbersThanCurrent(curPara)
+		fmt.Printf("输入:%v,    输出:%v,     预期结果:%v    \n", curPara, curRes, correctRes)
 		same := true
-		for i, v := range cur_res {
-			if correct_res[i] != v {
+		for i, v := range curRes {
+			if correctRes[i] != v {
 				same = false
 				break
 			}
