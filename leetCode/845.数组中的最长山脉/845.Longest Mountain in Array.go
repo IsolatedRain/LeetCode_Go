@@ -1,4 +1,4 @@
-package leetCode
+package leetcode
 
 func longestMountain(A []int) int {
 	n := len(A)

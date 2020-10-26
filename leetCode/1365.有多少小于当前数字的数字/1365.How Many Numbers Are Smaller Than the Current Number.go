@@ -1,4 +1,4 @@
-package leetCode
+package leetcode
 
 func smallerNumbersThanCurrent(nums []int) []int {
 	max_num := max(nums)

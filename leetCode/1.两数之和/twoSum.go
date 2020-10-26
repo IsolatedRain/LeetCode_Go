@@ -1,4 +1,4 @@
-package leetCode
+package leetcode
 
 // 思路: i + j = target
 //  	 target - i = index 存入 字典,

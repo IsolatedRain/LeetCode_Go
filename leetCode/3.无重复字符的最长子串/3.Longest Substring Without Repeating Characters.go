@@ -1,4 +1,4 @@
-package leetCode
+package leetcode
 
 func lengthOfLongestSubstring(s string) int {
 	d := make(map[rune]int)

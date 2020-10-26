@@ -1,4 +1,4 @@
-package leetCode
+package leetcode
 // 思路: 左右指针,左指针在0位置, 右指针在数组末尾, 
 // 通过交换指针的值, 移动指针.
 // 最后检查 左指针位置 是否为 val, 需不需要舍弃.
@@ -12,13 +12,13 @@ func removeElement(nums []int, val int) int {
 	for L < R {
 		if nums[L] == val {
 			nums[L] = nums[R]
-			R -= 1
+			R --
 		} else {
-			L += 1
+			L ++
 		}
 	}
 	if nums[L] == val {
-		L -= 1
+		L --
 	}
 	return L + 1
 }
