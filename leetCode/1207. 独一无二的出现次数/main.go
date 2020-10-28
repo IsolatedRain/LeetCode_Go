@@ -3,18 +3,17 @@ package main
 import "fmt"
 
 func uniqueOccurrences(arr []int) bool {
-	n := len(arr)
-	cnt := make(map[int]int, n)
-	for i := 0; i < n; i++ {
-		cnt[arr[i]]++
+	cnt := map[int]int{}
+	for _, k := range arr {
+		cnt[k]++
 	}
-	d := make(map[int]int, len(cnt))
-	for _, v := range cnt {
-		_, exsit := d[v]
-		if exsit {
+
+	d := map[int]bool{}
+	for _, c := range cnt {
+		if d[c] {
 			return false
 		}
-		d[v]++
+		d[c] = true
 	}
 	return true
 }
