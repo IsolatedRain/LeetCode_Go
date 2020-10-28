@@ -6,18 +6,11 @@ import (
 
 // 前缀和 如果小于0, 就舍弃前面的, 从当前开始看.
 func maxSubArray(nums []int) int {
-	preSum := nums[0]
-	if nums[0] < 0 {
-		preSum = 0
-	}
 	curMax := nums[0]
 	n := len(nums)
 	for i := 1; i < n; i++ {
-		preSum += nums[i]
-		curMax = max(curMax, preSum)
-		if preSum <= 0 {
-			preSum = 0
-		}
+		nums[i] += max(nums[i-1], 0)
+		curMax = max(curMax, nums[i])
 	}
 	return curMax
 }
