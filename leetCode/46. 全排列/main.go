@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	list2golist "List2GoList"
+	"fmt"
+)
 
 // 深搜 回溯, mark数组标记 已选位置
 func permute(nums []int) [][]int {
@@ -26,7 +29,9 @@ func permute(nums []int) [][]int {
 }
 
 func main() {
-	p := []int{1, 2, 3}
+	para := "[1, 2,3,4,5]"
+	p := list2golist.List2GoList(para)
+	fmt.Printf("%v\n", p)
 	r := permute(p)
 	fmt.Printf("输入: %v\n输出: %v\n", p, r)
 }
