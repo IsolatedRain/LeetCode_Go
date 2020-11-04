@@ -1,4 +1,4 @@
-module leetcode/LeetCode_Go/leetCode
+module leetcode
 
 go 1.15
 
