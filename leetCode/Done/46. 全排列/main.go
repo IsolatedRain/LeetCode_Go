@@ -1,7 +1,6 @@
 package main
 
 import (
-	list2golist "List2GoList"
 	"fmt"
 )
 
@@ -29,9 +28,7 @@ func permute(nums []int) [][]int {
 }
 
 func main() {
-	para := "[1, 2,3,4,5]"
-	p := list2golist.List2GoList(para)
-	fmt.Printf("%v\n", p)
-	r := permute(p)
-	fmt.Printf("输入: %v\n输出: %v\n", p, r)
+	para := []int{1, 2, 3, 4, 5}
+	r := permute(para)
+	fmt.Printf("输入: %v\n输出: %v\n", para, r)
 }
