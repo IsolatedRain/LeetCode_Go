@@ -10,4 +10,5 @@ func is_same_silice(arr1 []int, arr2 []int) bool {
 		}
 	}
 	return true
+	// 测试
 }
