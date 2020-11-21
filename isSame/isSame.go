@@ -1,6 +1,6 @@
 package leetcode
 
-func is_same_silice(arr1 []int, arr2 []int) bool {
+func isSameSlice(arr1 []int, arr2 []int) bool {
 	if len(arr1) != len(arr2) {
 		return false
 	}
@@ -11,4 +11,5 @@ func is_same_silice(arr1 []int, arr2 []int) bool {
 	}
 	return true
 	// 测试
+	// test case 2
 }
