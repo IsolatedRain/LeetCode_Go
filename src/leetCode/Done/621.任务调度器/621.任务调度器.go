@@ -25,6 +25,7 @@ func leastInterval(tasks []byte, n int) int {
 	}
 	return minCost
 }
+
 func main() {
 	tasks := []byte{'A', 'A', 'A', 'B', 'B', 'B'}
 	n := 2
