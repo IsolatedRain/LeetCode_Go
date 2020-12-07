@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 // 不翻转矩阵，直接计算每列的贡献。
+// 1<<(c-1)
 func matrixScore(A [][]int) int {
 	row := len(A)
 	col := len(A[0])
