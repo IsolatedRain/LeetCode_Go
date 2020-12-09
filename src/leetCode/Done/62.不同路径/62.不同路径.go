@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// m+n-2 次移动， 选择 m-1次下移.
+// C(m+n-2, m-1)
 func uniquePaths(m int, n int) int {
 	last := make([]int, m)
 	for r := 0; r < n; r++ {
