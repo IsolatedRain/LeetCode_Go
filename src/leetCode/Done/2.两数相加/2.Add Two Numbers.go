@@ -1,9 +1,8 @@
 package leetcode
 
-import (
-	// "fmt"
-	"structures"
-)
+import "structures"
+
+// "fmt"
 
 /**
  * Definition for singly-linked list.
@@ -12,6 +11,7 @@ import (
  *     Next *ListNode
  * }
  */
+//  */
 type listNode = structures.ListNode
 
 func addTwoNumbers(l1 *listNode, l2 *listNode) *listNode {

@@ -1,3 +1,10 @@
+package main
+
+import "structures"
+
+// ListNode 链表
+type ListNode = structures.ListNode
+
 func merge(head1, head2 *ListNode) *ListNode {
 	dummyHead := &ListNode{}
 	temp, temp1, temp2 := dummyHead, head1, head2
