@@ -9,7 +9,6 @@ func totalNQueens(n int) int {
 	if n <= 3 {
 		return 0
 	}
-	maxMask := (1 << n) - 1
 	res := 0
 	var dfs func(r, c, d, s int)
 	dfs = func(r, c, d, s int) {
@@ -17,11 +16,12 @@ func totalNQueens(n int) int {
 			res++
 			return
 		}
-		curMask := maxMask & ^(c | d | s)
-		for curMask > 0 {
-			nxtC := curMask & (-curMask)
-			dfs(r+1, c|nxtC, (d|nxtC)>>1, (s|nxtC)<<1)
-			curMask &= ^nxtC
+		uMask := c | d | s
+		for i := 0; i < n; i++ {
+			if 1<<i&uMask == 0 {
+				curC := 1 << i
+				dfs(r+1, c|curC, (curC|d)<<1, (curC|s)>>1)
+			}
 		}
 	}
 	dfs(0, 0, 0, 0)
@@ -29,7 +29,7 @@ func totalNQueens(n int) int {
 }
 
 func main() {
-	n := 12
+	n := 8
 	r := totalNQueens(n)
 	fmt.Println(r)
 }
