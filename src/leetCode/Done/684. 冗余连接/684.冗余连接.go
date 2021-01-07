@@ -37,10 +37,10 @@ func findRedundantConnection(edges [][]int) []int {
 		} else {
 			return []int{e[0], e[1]}
 		}
-
 	}
 	return []int{}
 }
+
 func main() {
 	p := [][]int{{1, 2}, {2, 3}, {3, 4}, {1, 4}, {1, 5}}
 	fmt.Printf("输入: %v\n", p)
