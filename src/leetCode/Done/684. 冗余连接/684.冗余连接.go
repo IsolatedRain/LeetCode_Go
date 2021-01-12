@@ -3,19 +3,17 @@ package main
 import "fmt"
 
 func findRedundantConnection(edges [][]int) []int {
-	p := make(map[int]int)
-
+	p := make([]int, len(edges)+1)
+	for i := range p {
+		p[i] = i
+	}
 	var getRoot func(x int) int
 	getRoot = func(x int) int {
-		// 第一次遇到, 初始化 为自身
-		if _, ok := p[x]; !ok {
-			p[x] = x
-		}
 		// 寻找父节点
-		for p[x] != x {
-			x = p[x]
+		if p[x] != p[p[x]] {
+			p[x] = getRoot(p[x])
 		}
-		return x
+		return p[x]
 	}
 	// 合并
 	var union func(x, y int)
@@ -28,21 +26,22 @@ func findRedundantConnection(edges [][]int) []int {
 			p[yRoot] = xRoot
 		}
 	}
-
 	for _, e := range edges {
 		e0 := getRoot(e[0])
 		e1 := getRoot(e[1])
 		if e0 != e1 {
 			union(e0, e1)
 		} else {
-			return []int{e[0], e[1]}
+			return e
 		}
 	}
 	return []int{}
 }
 
 func main() {
-	p := [][]int{{1, 2}, {2, 3}, {3, 4}, {1, 4}, {1, 5}}
+	// p := [][]int{{1, 2}, {2, 3}, {3, 4}, {1, 4}, {1, 5}}
+	// p := [][]int{{1, 2}, {1, 3}, {2, 3}}
+	p := [][]int{{1, 5}, {3, 4}, {3, 5}, {4, 5}, {2, 4}}
 	fmt.Printf("输入: %v\n", p)
 	r := findRedundantConnection(p)
 	fmt.Printf("输出: %v\n", r)
