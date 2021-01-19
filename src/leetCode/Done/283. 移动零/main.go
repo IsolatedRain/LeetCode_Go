@@ -5,7 +5,6 @@ import "fmt"
 func moveZeroes(nums []int) []int {
 	L, R, n := 0, 1, len(nums)
 	for R < n {
-		fmt.Printf("%v %v %v\n", L, R, nums)
 		if nums[L] != 0 {
 			L++
 		} else if nums[R] != 0 {
