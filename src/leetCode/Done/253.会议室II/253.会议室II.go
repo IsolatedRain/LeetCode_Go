@@ -26,12 +26,14 @@ func minMeetingRooms(intervals [][]int) int {
 	}
 	return res
 }
+
 func max(x, y int) int {
 	if x > y {
 		return x
 	}
 	return y
 }
+
 func main() {
 	intervals := [][]int{{0, 30}, {5, 10}, {15, 20}}
 	r := minMeetingRooms(intervals)
