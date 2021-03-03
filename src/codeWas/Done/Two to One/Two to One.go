@@ -3,7 +3,7 @@ package main
 
 import "fmt"
 
-// TwoToOne 合并二字符串为 不重复字符的字符串
+// TwoToOne 合并两字符串为 无重复的字符串
 func TwoToOne(s1 string, s2 string) string {
 	mark := make([]byte, 26)
 	for _, c := range s1 + s2 {
