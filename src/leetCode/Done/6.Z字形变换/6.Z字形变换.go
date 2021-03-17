@@ -19,7 +19,8 @@ func convert(s string, numRows int) string {
 		if k == numRows {
 			swap = -1
 			k -= 2
-		} else if k == 0 {
+		}
+		if k == 0 {
 			swap = 1
 		}
 	}
@@ -33,7 +34,7 @@ func convert(s string, numRows int) string {
 func main() {
 	// s := "LEETCODEISHIRING"
 	// numRows := 4
-	s := "AB"
+	s := "ABCD"
 	numRows := 2
 	r := convert(s, numRows)
 	fmt.Println(r)
