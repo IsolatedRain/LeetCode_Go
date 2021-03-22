@@ -19,16 +19,14 @@ func evalRPN(tokens []string) int {
 	return stack[0]
 }
 func cal(x, y int, op string) int {
-	if op == "+" {
+	switch op {
+	case "+":
 		return x + y
-	}
-	if op == "-" {
+	case "-":
 		return x - y
-	}
-	if op == "*" {
+	case "*":
 		return x * y
-	}
-	if op == "/" {
+	case "/":
 		return x / y
 	}
 	return -1
