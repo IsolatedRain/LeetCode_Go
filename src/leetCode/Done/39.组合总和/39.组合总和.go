@@ -20,9 +20,6 @@ func combinationSum(candidates []int, target int) [][]int {
 			res = append(res, tmp)
 			return
 		}
-		if curID == n {
-			return
-		}
 		for i := curID; i < n; i++ {
 			if curSum+candidates[i] > target {
 				break
